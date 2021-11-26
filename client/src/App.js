@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SimpleStorageContract from "./contracts/SimpleStorage.json";
+import PetShopContract from "./contracts/PetShop.json";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import getWeb3 from "./getWeb3";
 import AddAgent from "./components/AddAgent";
@@ -16,14 +16,14 @@ class App extends Component {
       const accounts = await web3.eth.getAccounts();
 
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = SimpleStorageContract.networks[networkId];
+      const deployedNetwork = PetShopContract.networks[networkId];
       if(!deployedNetwork)
       {
         alert("Please select the correct network");
         return false;
       }
       const instance = new web3.eth.Contract(
-        SimpleStorageContract.abi,
+        PetShopContract.abi,
         deployedNetwork && deployedNetwork.address,
       );
       this.setState({ web3, accounts, contract: instance }, this.runExample);
@@ -36,13 +36,13 @@ class App extends Component {
   };
 
   runExample = async () => {
-    const { accounts, contract } = this.state;
+    // const { accounts, contract } = this.state;
 
-    await contract.methods.set(5).send({ from: accounts[0] });
+    // await contract.methods.set(5).send({ from: accounts[0] });
 
-    const response = await contract.methods.get().call();
+    // const response = await contract.methods.get().call();
 
-    this.setState({ storageValue: response });
+    // this.setState({ storageValue: response });
   };
 
   render() {

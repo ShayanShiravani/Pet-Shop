@@ -8,9 +8,13 @@ class AddAgent extends Component {
 
     render() {
         return (
-            <div className="App">
-                <div>Hi!</div>
-                <div>This My Simple DApp</div>
+            <div className="row">
+                <div className="col-sm-8">
+                    <form>
+                        <label for="agent_address" class="form-label">Agent address</label>
+                        <input type="text" class="form-control" id="agent_address" />
+                    </form>
+                </div>
             </div>
         );
     }
