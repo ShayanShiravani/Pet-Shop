@@ -1,0 +1,22 @@
+.add-agent {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+body {
+  background-color: #3b465c;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.bd-navbar {
+  min-height: 4rem;
+  background-color: #30394a;
+}
+
+.App-link {
+  color: #09d3ac;
+}
