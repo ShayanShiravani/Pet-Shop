@@ -5,10 +5,10 @@ pragma experimental ABIEncoderV2;
 contract PetShop {
 
     address public owner;
-    Agent[10] public agents;
-    uint public lastAgentId;
+    Branch[10] public branches;
+    uint public lastBranchId;
 
-    event AgentAdded(address agent, uint id);
+    event BranchAdded(address branch, uint id);
 
     struct Pet {
         uint id;
@@ -18,34 +18,36 @@ contract PetShop {
         address owner;
     }
 
-    struct Agent {
+    struct Branch {
         uint id;
         address owner;
+        string location;
+        string phoneNumber;
         Pet[] pets;
     }
 
 
     constructor() public {
         owner = msg.sender;
-        lastAgentId = 0;
-        addAgent(msg.sender);
+        lastBranchId = 0;
+        addBranch(msg.sender);
     }
 
-    function addAgent(address agentAddress) public {
+    function addBranch(address branchAddress) public {
         require(msg.sender == owner);
-        require(lastAgentId < 9);
-        uint newAgentId = lastAgentId + 1;
-        agents[newAgentId-1].id = newAgentId;
-        agents[newAgentId-1].owner = agentAddress;
-        emit AgentAdded(agentAddress, newAgentId);
+        require(lastBranchId < 10);
+        branches[lastBranchId].id = lastBranchId + 1;
+        branches[lastBranchId].owner = branchAddress;
+        lastBranchId = lastBranchId + 1;
+        emit BranchAdded(branchAddress, lastBranchId + 1);
     }
 
-    function getAgents() public view returns (uint[] memory, address[] memory) {
+    function getBranches() public view returns (uint[] memory, address[] memory) {
         uint[] memory ids = new uint[](10);
         address[] memory addresses = new address[](10);
         for (uint i = 0; i < 10; i+=1) {
-            ids[i] = agents[i].id;
-            addresses[i] = agents[i].owner;
+            ids[i] = branches[i].id;
+            addresses[i] = branches[i].owner;
         }
         return (ids, addresses);
     }
