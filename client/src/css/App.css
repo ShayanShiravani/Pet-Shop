@@ -1,4 +1,4 @@
-.add-agent {
+.add-branch {
   text-align: center;
 }
 
@@ -13,10 +13,18 @@ body {
 }
 
 .bd-navbar {
-  min-height: 4rem;
+  height: 10vh;
   background-color: #30394a;
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+#full-layout {
+  min-height: 100vh;
 }

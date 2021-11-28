@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AddAgent from "./components/AddAgent";
+import AddBranch from "./components/AddBranch";
 import client from "./objects/client";
 import "./css/App.css";
 import Header from "./components/Header";
@@ -36,13 +36,13 @@ class App extends Component {
       );
     }
     return (
-      <div>
+      <div id="full-layout">
         <Header />
-        <div class="container-fluid">
+        <div className="container-fluid">
           <Router>
             <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/add-agent" element={<AddAgent />} />
+              <Route exact path="/" element={<Home client={client} />} />
+              <Route exact path="/add-branch" element={<AddBranch />} />
             </Routes>
           </Router>
         </div>

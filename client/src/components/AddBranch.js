@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../css/AddAgent.css";
+import "../css/AddBranch.css";
 
-class AddAgent extends Component {
+class AddBranch extends Component {
 
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ class AddAgent extends Component {
         e.preventDefault();
     }
 
-    addAgent = async () => {
+    addBranch = async () => {
         const { accounts, contract } = this.state;
 
         await contract.methods.set(5).send({ from: accounts[0] });
@@ -35,11 +35,11 @@ class AddAgent extends Component {
 
     render() {
         return (
-            <div className="row add-agent">
+            <div className="row add-branch">
                 <div className="col-sm-5">
                     <form onSubmit={this.submitForm}>
-                        <label htmlFor="agent_address" className="form-label">Agent address</label>
-                        <input type="text" className="form-control" id="agent_address" />
+                        <label htmlFor="branch_address" className="form-label">Branch address</label>
+                        <input type="text" className="form-control" id="branch_address" />
                         <input type="submit" className="btn btn-outline-warning btn-block mt-4" value="Add" />
                     </form>
                 </div>
@@ -48,4 +48,4 @@ class AddAgent extends Component {
     }
 }
 
-export default AddAgent;
+export default AddBranch;
