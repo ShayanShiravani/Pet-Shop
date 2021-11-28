@@ -6,7 +6,7 @@ contract PetShop {
 
     address public owner;
     Branch[10] public branches;
-    uint public lastBranchId;
+    uint public newBranchId;
 
     event BranchAdded(address branch, uint id);
 
@@ -29,17 +29,17 @@ contract PetShop {
 
     constructor() public {
         owner = msg.sender;
-        lastBranchId = 0;
+        newBranchId = 0;
         addBranch(msg.sender);
     }
 
     function addBranch(address branchAddress) public {
         require(msg.sender == owner);
-        require(lastBranchId < 10);
-        branches[lastBranchId].id = lastBranchId + 1;
-        branches[lastBranchId].owner = branchAddress;
-        lastBranchId = lastBranchId + 1;
-        emit BranchAdded(branchAddress, lastBranchId + 1);
+        require(newBranchId < 10);
+        branches[newBranchId].id = newBranchId + 1;
+        branches[newBranchId].owner = branchAddress;
+        newBranchId = newBranchId + 1;
+        emit BranchAdded(branchAddress, newBranchId + 1);
     }
 
     function getBranches() public view returns (uint[] memory, address[] memory) {
