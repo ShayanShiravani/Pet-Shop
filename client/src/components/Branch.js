@@ -3,10 +3,6 @@ import "../css/Branch.css";
 
 class Branch extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="card">
