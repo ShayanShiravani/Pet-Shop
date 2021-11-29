@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import "../css/AddBranch.css";
+import common from "../objects/common";
 
 class AddBranch extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            branchAddress: '',
+        };
     }
 
     componentDidMount = () => {
@@ -21,26 +25,31 @@ class AddBranch extends Component {
 
     submitForm = (e) => {
         e.preventDefault();
+        this.addBranch(this.state.branchAddress);
     }
 
-    addBranch = async () => {
-        const { accounts, contract } = this.state;
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
 
-        await contract.methods.set(5).send({ from: accounts[0] });
-
-        const response = await contract.methods.get().call();
-
-        this.setState({ storageValue: response });
+    addBranch = async (address) => {
+        // if(common.isEmpty(address, true))
+        // {
+        //     alert("Please enter a valid address");
+        //     return false;
+        // }
+        await this.props.client.contracts.PetShop.methods.addBranch(address)
+        .send({ from: this.props.client.activeAccount });
     }
 
     render() {
         return (
             <div className="row add-branch">
                 <div className="col-sm-5">
-                    <form onSubmit={this.submitForm}>
+                    <form noValidate onSubmit={this.submitForm}>
                         <label htmlFor="branch_address" className="form-label">Branch address</label>
-                        <input type="text" className="form-control" id="branch_address" />
-                        <input type="submit" className="btn btn-outline-warning btn-block mt-4" value="Add" />
+                        <input type="text" name="branchAddress" className="form-control form-control-lg" id="branch_address" value={this.state.branchAddress} onChange={this.handleChange} />
+                        <input type="submit" className="btn btn-lg btn-outline-warning btn-block mt-4" value="Add" />
                     </form>
                 </div>
             </div>
