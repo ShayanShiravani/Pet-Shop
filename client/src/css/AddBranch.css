@@ -4,3 +4,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.add-branch form {
+    text-align: center;
+}

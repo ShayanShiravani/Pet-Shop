@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../css/AddBranch.css";
-import Common from "../objects/Common";
 
 class AddBranch extends Component {
 
@@ -33,19 +32,19 @@ class AddBranch extends Component {
     }
 
     addBranch = async (address) => {
-        // if(Common.isEmpty(address, true))
-        // {
-        //     alert("Please enter a valid address");
-        //     return false;
-        // }
+        if(address.trim() === '')
+        {
+            alert("Please enter an account address");
+            return false;
+        }
         await this.props.client.contracts.PetShop.methods.addBranch(address)
         .send({ from: this.props.client.activeAccount });
     }
 
     render() {
         return (
-            <div className="row add-branch">
-                <div className="col-sm-5">
+            <div className="row add-branch m-3">
+                <div className="col-md-5">
                     <form noValidate onSubmit={this.submitForm}>
                         <label htmlFor="branch_address" className="form-label">Branch address</label>
                         <input type="text" name="branchAddress" className="form-control form-control-lg" id="branch_address" value={this.state.branchAddress} onChange={this.handleChange} />

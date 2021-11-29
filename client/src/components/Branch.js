@@ -11,7 +11,7 @@ class Branch extends Component {
                 </div>
                 <div className="card-body">
                     <div className="branch-img">
-                        <img src="/logo192.png" className="card-img-top" alt="" />
+                        <img src={this.props.imageSrc} className="card-img-top" alt="" />
                     </div>
                     <h5 className="card-title">{this.props.title}</h5>
                     <p className="card-text">{this.props.address}</p>
