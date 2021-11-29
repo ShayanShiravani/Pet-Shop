@@ -42,7 +42,7 @@ class App extends Component {
           <Router>
             <Routes>
               <Route exact path="/" element={<Home client={client} />} />
-              <Route exact path="/add-branch" element={<AddBranch />} />
+              <Route exact path="/add-branch" element={<AddBranch client={client} />} />
             </Routes>
           </Router>
         </div>
