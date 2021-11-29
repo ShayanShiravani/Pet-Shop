@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../css/AddBranch.css";
-import common from "../objects/common";
+import Common from "../objects/Common";
 
 class AddBranch extends Component {
 
@@ -33,7 +33,7 @@ class AddBranch extends Component {
     }
 
     addBranch = async (address) => {
-        // if(common.isEmpty(address, true))
+        // if(Common.isEmpty(address, true))
         // {
         //     alert("Please enter a valid address");
         //     return false;
