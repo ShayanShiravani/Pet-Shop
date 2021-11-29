@@ -1,7 +1,7 @@
 import getWeb3 from "../getWeb3";
 import PetShopContract from "../contracts/PetShop.json";
 
-const client = {
+const Client = {
     web3: null,
     networkId: null,
     activeAccount: null,
@@ -25,11 +25,11 @@ const client = {
                 PetShopContract.abi,
                 deployedNetwork && deployedNetwork.address,
             );
-            client.web3 = web3;
-            client.networkId = networkId;
-            client.activeAccount = accounts[0];
-            client.accounts = accounts;
-            client.contracts.PetShop = instance;
+            Client.web3 = web3;
+            Client.networkId = networkId;
+            Client.activeAccount = accounts[0];
+            Client.accounts = accounts;
+            Client.contracts.PetShop = instance;
         } catch (error) {
             alert(
                 `Failed to load web3, accounts, or contract. Check console for details.`,
@@ -39,4 +39,4 @@ const client = {
     }
 };
 
-export default client;
+export default Client;
