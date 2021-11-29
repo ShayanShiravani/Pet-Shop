@@ -1,0 +1,16 @@
+.card {
+    color: #000;
+}
+
+.card-body img {
+    width: 12rem;
+    height: 12rem;
+}
+
+.branch-img {
+    text-align: center;
+}
+
+.card-text {
+    font-size: 0.7em;
+}
