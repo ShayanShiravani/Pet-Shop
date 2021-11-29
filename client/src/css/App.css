@@ -2,24 +2,19 @@
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
-}
+} */
 
 body {
   background-color: #3b465c;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 2vmin);
   color: white;
 }
 
-.bd-navbar {
-  height: 10vh;
-  background-color: #30394a;
-}
-
-.App-link {
+/* .App-link {
   color: #09d3ac;
-}
+} */
 
 #root {
   min-height: 100vh;
@@ -27,4 +22,8 @@ body {
 
 #full-layout {
   min-height: 100vh;
+}
+
+.jumbotron {
+  background-color: dimgray;
 }
