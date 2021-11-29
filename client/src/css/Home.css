@@ -1,0 +1,11 @@
+.jumbotron {
+    background-color: dimgray;
+}
+
+div.jumbotron hr {
+    background-color: turquoise;
+}
+
+.pet-quote q {
+    color: springgreen;
+}
