@@ -1,4 +1,4 @@
-const common = {
+const Common = {
     isNumeric: (n) => {
         return !isNaN(parseFloat(n)) && isFinite(n);
     },
@@ -16,7 +16,7 @@ const common = {
             return !Object.keys(v).length;
         }
         
-        if (common.isNumeric(v)) {
+        if (Common.isNumeric(v)) {
             return zeroIsEmpty ? parseFloat(v) === 0 : false;
         }
     
@@ -24,4 +24,4 @@ const common = {
     }
 }
 
-export default common;
+export default Common;
