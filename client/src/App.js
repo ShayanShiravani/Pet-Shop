@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddBranch from "./components/AddBranch";
-import client from "./objects/client";
+import Client from "./objects/Client";
 import "./css/App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -11,14 +11,14 @@ class App extends Component {
 
   componentDidMount = async () => {
     try {
-      await client.init();
+      await Client.init();
       this.setState(
         { 
-          web3: client.web3, 
-          accounts: client.accounts, 
-          contract: client.contracts.PetShop 
+          web3: Client.web3, 
+          accounts: Client.accounts, 
+          contract: Client.contracts.PetShop 
         });
-        console.log(client.contracts.PetShop);
+        console.log(Client.contracts.PetShop);
     } catch (error) {
       alert(
         `Failed to load web3, accounts, or contract. Check console for details.`,
@@ -41,8 +41,8 @@ class App extends Component {
         <div className="container-fluid">
           <Router>
             <Routes>
-              <Route exact path="/" element={<Home client={client} />} />
-              <Route exact path="/add-branch" element={<AddBranch client={client} />} />
+              <Route exact path="/" element={<Home client={Client} />} />
+              <Route exact path="/add-branch" element={<AddBranch client={Client} />} />
             </Routes>
           </Router>
         </div>
