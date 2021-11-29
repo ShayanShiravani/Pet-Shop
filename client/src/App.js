@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AddBranch from "./components/AddBranch";
 import Client from "./objects/Client";
 import "./css/App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import BranchesList from "./components/BranchesList";
 
 class App extends Component {
   state = { storageValue: 0, web3: null, accounts: null, contract: null };
@@ -42,7 +42,7 @@ class App extends Component {
           <Router>
             <Routes>
               <Route exact path="/" element={<Home client={Client} />} />
-              <Route exact path="/add-branch" element={<AddBranch client={Client} />} />
+              <Route exact path="/branches-list" element={<BranchesList client={Client} />} />
             </Routes>
           </Router>
         </div>

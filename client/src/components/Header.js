@@ -17,7 +17,7 @@ class Header extends Component {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/add-branch">Add branch</a>
+                            <a className="nav-link" href="/branches-list">Branches List</a>
                         </li>
                         {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
