@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../css/Home.css";
 
 class Home extends Component {
-    
+
     render() {
         return (
             <div>
@@ -16,7 +16,7 @@ class Home extends Component {
                     <p>Please feel free to fork it or do whatever you want with it.</p>
                     <p className="lead">
                         <a className="btn btn-primary btn-lg" 
-                        href="https://github.com/ShayanShiravani/Pet-Shop.git" role="button">GitHub</a>
+                        href="https://github.com/ShayanShiravani/Pet-Shop.git" target="_blank" role="button">GitHub</a>
                     </p>
                 </div>
                 <div className="container">
