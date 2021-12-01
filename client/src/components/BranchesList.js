@@ -21,6 +21,7 @@ class BranchesList extends Component {
         if(this.state.branchesList != null)
         {
             const branchAddresses = this.state.branchesList[1];
+            const branchTitles = this.state.branchesList[2];
             var tempList = [];
             var count = 0;
             var i = 0;
@@ -48,7 +49,7 @@ class BranchesList extends Component {
                 {
                     tempList.push(
                         <div key={i++} className="col-md-4">
-                            <Branch key={index} title="test" address={address} 
+                            <Branch key={index} title={branchTitles[index]} address={address} 
                             imageSrc="/assets/images/petshop.jpg" />
                         </div>);
                 }
@@ -76,6 +77,9 @@ class BranchesList extends Component {
     render() {
         return(
             <div className="container-fluid">
+                <button type="button" className="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#add_branch">
+                    Define branch
+                </button>
                 <AddBranch client={this.props.client}/>
                 <div className="container-fluid justify-content-center">
                     {this.state.cardsList}
