@@ -5,7 +5,8 @@ pragma experimental ABIEncoderV2;
 contract PetShop {
 
     address public owner;
-    Branch[10] public branches;
+    uint constant branchCap = 10;
+    Branch[branchCap] public branches;
     uint public newBranchId;
 
     event BranchAdded(address branch, uint id);
@@ -21,6 +22,7 @@ contract PetShop {
     struct Branch {
         uint id;
         address owner;
+        string title;
         string location;
         string phoneNumber;
         Pet[] pets;
@@ -30,26 +32,29 @@ contract PetShop {
     constructor() public {
         owner = msg.sender;
         newBranchId = 0;
-        addBranch(msg.sender);
+        addBranch(msg.sender, "Shayan");
     }
 
-    function addBranch(address branchAddress) public {
+    function addBranch(address branchAddress, string memory title) public {
         require(msg.sender == owner);
-        require(newBranchId < 10);
+        require(newBranchId < branchCap);
         branches[newBranchId].id = newBranchId + 1;
         branches[newBranchId].owner = branchAddress;
+        branches[newBranchId].title = title;
         newBranchId = newBranchId + 1;
         emit BranchAdded(branchAddress, newBranchId + 1);
     }
 
-    function getBranches() public view returns (uint[] memory, address[] memory) {
-        uint[] memory ids = new uint[](10);
-        address[] memory addresses = new address[](10);
-        for (uint i = 0; i < 10; i+=1) {
+    function getBranches() public view returns (uint[] memory, address[] memory, string[] memory) {
+        uint[] memory ids = new uint[](branchCap);
+        address[] memory addresses = new address[](branchCap);
+        string[] memory titles = new string[](branchCap);
+        for (uint i = 0; i < branchCap; i+=1) {
             ids[i] = branches[i].id;
             addresses[i] = branches[i].owner;
+            titles[i] = branches[i].title;
         }
-        return (ids, addresses);
+        return (ids, addresses, titles);
     }
 
 }
