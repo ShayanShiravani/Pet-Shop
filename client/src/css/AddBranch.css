@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
-.add-branch form {
+.modal form {
     text-align: center;
+}
+
+.modal {
+    color: #000;
 }
