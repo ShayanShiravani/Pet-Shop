@@ -6,7 +6,6 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <br/>
                 <div className="jumbotron">
                     <h1 className="display-4">Welcome to Shayan's PetShop</h1>
                     <br/>
@@ -16,7 +15,7 @@ class Home extends Component {
                     <p>Please feel free to fork it or do whatever you want with it.</p>
                     <p className="lead">
                         <a className="btn btn-primary btn-lg" 
-                        href="https://github.com/ShayanShiravani/Pet-Shop.git" target="_blank" role="button">GitHub</a>
+                        href="https://github.com/ShayanShiravani/Pet-Shop.git" target="_blank" role="button">GitHub »</a>
                     </p>
                 </div>
                 <div className="container">
