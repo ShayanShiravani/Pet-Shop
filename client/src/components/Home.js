@@ -7,7 +7,7 @@ class Home extends Component {
         return (
             <div>
                 <div className="jumbotron">
-                    <h1 className="display-4">Welcome to Shayan's PetShop</h1>
+                    <h1 className="display-4">PETSHOP PROTOCOL</h1>
                     <br/>
                     <h5 className="pet-quote"><q>A dog is the only thing on earth that loves you more than he loves himself.</q>__Josh Billings</h5>
                     <p className="lead">My decentralize PetShop implemented using Ethereum smart contracts</p>
@@ -21,19 +21,24 @@ class Home extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-4">
-                            <h3>Column 1</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                            <h3>Branches</h3>
+                            <p>
+                                10 branches can be defined.<br/>
+                                Only owner of PetShop can define a branch
+                            </p>
+                            <p>
+                                The ERC-20 Token PET enables branches to do their activities.
+                            </p>
                         </div>
                         <div className="col-sm-4">
-                            <h3>Column 2</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                            <h3>Pets</h3>
+                            <p>Each branch can sell or adopt a pet</p>
+                            <p>The pet's information will store in the Ethereum blockchain</p>
                         </div>
                         <div className="col-sm-4">
-                            <h3>Column 3</h3> 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                            <h3>Users</h3> 
+                            <p>Every customer can pay for a pet and buy it</p>
+                            <p>The fee must be paid in ETH</p>
                         </div>
                     </div>
                 </div>
