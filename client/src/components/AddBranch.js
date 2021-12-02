@@ -61,17 +61,17 @@ class AddBranch extends Component {
                         </button>
                     </div>
                     <div className="modal-body">
-                        <form noValidate onSubmit={this.submitForm}>
+                        <form id="add_branch_form" noValidate onSubmit={this.submitForm}>
                             <label htmlFor="branch_address" className="form-label">address</label>
                             <input type="text" name="branchAddress" className="form-control form-control-lg" id="branch_address" value={this.state.branchAddress} onChange={this.handleChange} />
                             <label htmlFor="branch_title" className="form-label">title</label>
                             <input type="text" name="branchTitle" className="form-control form-control-lg" id="branch_title" value={this.state.branchTitle} onChange={this.handleChange} />
-                            <input type="submit" className="btn btn-lg btn-outline-warning btn-block mt-4" value="Add" />
                         </form>
                     </div>
                     <div className="modal-footer">
-                        {/* <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button> */}
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input form="add_branch_form" type="submit" className="btn btn-primary" 
+                        value="Save changes" />
                     </div>
                     </div>
                 </div>
