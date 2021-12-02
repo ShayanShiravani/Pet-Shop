@@ -47,6 +47,7 @@ class AddBranch extends Component {
         }
         await this.props.client.contracts.PetShop.methods.addBranch(address, title)
         .send({ from: this.props.client.activeAccount });
+        this.props.callBack();
     }
 
     render() {
