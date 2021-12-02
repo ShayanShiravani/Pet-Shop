@@ -12,7 +12,11 @@ class BranchesList extends Component {
         };
     }
 
-    componentDidMount = async () => {
+    componentDidMount = () => {
+        this.fetchBranchesList();
+    }
+
+    fetchBranchesList = async () => {
         const response = await this.props.client.contracts.PetShop.methods.getBranches().call();
         this.setState({ branchesList: response }, this.createCardsList);
     }
@@ -80,7 +84,7 @@ class BranchesList extends Component {
                 <button type="button" className="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#add_branch">
                     Define branch
                 </button>
-                <AddBranch client={this.props.client}/>
+                <AddBranch client={this.props.client} callBack={this.fetchBranchesList} />
                 <div className="container-fluid justify-content-center">
                     {this.state.cardsList}
                 </div>
